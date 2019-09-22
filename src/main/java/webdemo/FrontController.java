@@ -11,17 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.google.common.base.Strings;
-
-import webdemo.controllers.Controller;
-import webdemo.controllers.ControllerFactory;
-import webdemo.controllers.UsuariosController;
+import webdemo.controllers.*;
 import webdemo.entidades.Usuario;
 
 import static org.apache.commons.lang3.RegExUtils.removeFirst;
 
-@WebServlet("/usuarios/*")
+@WebServlet(urlPatterns = {"/usuarios" , "/produtos"})
 public class FrontController extends HttpServlet {
 
 	/**
@@ -41,22 +37,15 @@ public class FrontController extends HttpServlet {
 			HttpServletResponse response) 
 					throws IOException, ServletException {
 
-		
-		String[] urlParams = removeFirst(request.getRequestURI(), "/").split("/");
-		
-		//posição 0: Controller
-		//posição 1: Action
-		//posição 2: ID
+		String url = request.getRequestURI();
+		String[] urlParams = removeFirst(url, "/").split("/");
 		for(String param : urlParams)
 			response.getOutputStream().println("-" + param);
-		
-		String controlador = urlParams[0];
+		String controlador = urlParams.length == 1 ?  urlParams[0] : "";
 		String acaoParam = urlParams.length > 1 ? urlParams[1] : "";
 		String idParam = urlParams.length > 2 ? urlParams[2] : "";
-		
-		//UsuariosController controller = new UsuariosController(request, response);
+
 		Controller controller = ControllerFactory.CreateController(controlador, request, response);
-		//new UsuariosController(request, response);
 		
 		switch(acaoParam) {
 		case "":
