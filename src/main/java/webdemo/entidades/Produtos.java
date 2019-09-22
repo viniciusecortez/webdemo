@@ -1,10 +1,23 @@
 package webdemo.entidades;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Produtos {
     private String nome;
     private String descricao;
     private String id;
     private static long quantidade = 0;
+    private static HashMap<String, Produtos> todos;
+
+    // Active Records
+
+    public static List<Produtos> Todos(){
+        return new ArrayList<Produtos>(Produtos.todos.values());
+    }
+
+
     public Produtos() {
         quantidade++;
         id = (new Long(quantidade)).toString();
