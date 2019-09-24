@@ -29,7 +29,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
-        <th scope="col">Sobrenome</th>
+        <th scope="col">Descrição</th>
         <th scope="col"></th>
     </tr>
     </thead>
@@ -38,7 +38,7 @@
         <tr>
             <th scope="row">${produto.id}</th>
             <td>${produto.nome}</td>
-            <td>${produto.sobrenome}</td>
+            <td>${produto.descricao}</td>
             <td>
                 <a href="/usuarios/edit/${produto.id}">Editar</a>
             </td>
@@ -47,7 +47,7 @@
     </tbody>
 </table>
 
-<a href="<%--// TODO: Colocar botão --%>" class="btn btn-primary">Criar</a>
+<a href="/produtos/" class="btn btn-primary">Criar</a>
 
 <c:import url="/WEB-INF/templates/common/_bootstrap_js.jsp" />
 
