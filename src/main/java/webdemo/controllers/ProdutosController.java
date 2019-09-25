@@ -17,12 +17,15 @@ public class ProdutosController extends Controller{
         try{
         List<Produtos> produtos = Produtos.Todos();
         getRequest().setAttribute("Produtos", produtos);
-        getRequest().getRequestDispatcher("/WEB-INF/templates/produtos/list.jsp").forward(getRequest(), getResponse());
+
         }catch (NullPointerException ex){
-            getRequest().getRequestDispatcher("/WEB-INF/templates/produtos/list.jsp").forward(getRequest(), getResponse());
+
         }
-
-
+        getRequest().getRequestDispatcher("/WEB-INF/templates/produtos/list.jsp").forward(getRequest(), getResponse());
+    }
+    @Override
+    public void create() {
+        
     }
 
 }
