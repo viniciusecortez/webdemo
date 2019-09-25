@@ -24,8 +24,9 @@ public class ProdutosController extends Controller{
         getRequest().getRequestDispatcher("/WEB-INF/templates/produtos/list.jsp").forward(getRequest(), getResponse());
     }
     @Override
-    public void create() {
-        
+    public void create() throws ServletException, IOException {
+        getRequest().getRequestDispatcher("/WEB-INF/templates/produtos/criar.jsp")
+                .forward(getRequest(), getResponse());
     }
 
 }

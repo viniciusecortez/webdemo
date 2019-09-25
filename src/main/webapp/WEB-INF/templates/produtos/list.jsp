@@ -47,7 +47,7 @@
     </tbody>
 </table>
 
-<a href="/produtos/" class="btn btn-primary">Criar</a>
+<a href="/produtos/create" class="btn btn-primary">Criar</a>
 
 <c:import url="/WEB-INF/templates/common/_bootstrap_js.jsp" />
 

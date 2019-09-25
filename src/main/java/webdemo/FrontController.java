@@ -36,12 +36,12 @@ public class FrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
 					throws IOException, ServletException {
-
 		String url = request.getRequestURI();
 		String[] urlParams = removeFirst(url, "/").split("/");
 		for(String param : urlParams)
 			response.getOutputStream().println("-" + param);
-		String controlador = urlParams.length == 1 ?  urlParams[0] : "";
+
+		String controlador = urlParams[0];
 		String acaoParam = urlParams.length > 1 ? urlParams[1] : "";
 		String idParam = urlParams.length > 2 ? urlParams[2] : "";
 
