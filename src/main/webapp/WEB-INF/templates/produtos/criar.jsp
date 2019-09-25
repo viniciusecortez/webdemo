@@ -15,10 +15,10 @@
 <head>
     <c:import url="/WEB-INF/templates/common/_metatags.jsp" />
     <c:import url="/WEB-INF/templates/common/_bootstrap_css.jsp" />
-    <title>Criar Usuário</title>
+    <title>Criar Produto</title>
 </head>
 <body class="container">
-<h1>Criar Usuário</h1>
+<h1>Criar Produto</h1>
 <form method="post" action="/produtos">
     <div class="form-group">
         <minha:validatedinputtext rotulo="Nome" valor="${param.nome}"
