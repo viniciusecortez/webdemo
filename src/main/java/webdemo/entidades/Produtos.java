@@ -46,4 +46,8 @@ public class Produtos {
     public String getNome() {
         return nome;
     }
+    public void salvar(){
+        todos.put(id, this);
+    }
+
 }

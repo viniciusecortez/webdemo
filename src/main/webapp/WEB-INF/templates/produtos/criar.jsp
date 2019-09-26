@@ -27,12 +27,12 @@
                                   idCampo="nome-input" nomeCampo="nome" />
     </div>
     <div class="form-group">
-        <minha:validatedinputtext rotulo="Sobrenome" valor="${param.sobrenome}"
-                                  erroValidacao="${SobrenomeInvalido}" invalido="${empty SobrenomeInvalido}"
-                                  textoPlaceholder="Seu Sobrenome"
-                                  idCampo="sobrenome-input" nomeCampo="sobrenome" />
+        <minha:validatedinputtext rotulo="Descricao" valor="${param.descricao}"
+                                  erroValidacao="${DescricaoInvalido}" invalido="${empty DescricaoInvalido}"
+                                  textoPlaceholder="Descrição"
+                                  idCampo="descricao-input" nomeCampo="descricao" />
     </div>
-    <a href="/usuarios" class="btn btn-danger">Cancelar</a>
+    <a href="/produtos" class="btn btn-danger">Cancelar</a>
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 

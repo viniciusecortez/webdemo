@@ -40,7 +40,7 @@ public class ProdutosController extends Controller{
             Produtos produtos = new Produtos();
             produtos.setNome(nome);
             produtos.setDescricao(descricao);
-
+            produtos.salvar();
 
             getResponse().sendRedirect("/produtos?success=true");
         }else {
@@ -59,8 +59,8 @@ public class ProdutosController extends Controller{
             isValid = false;
         }
 
-        if(!formData.containsKey("descricao") || formData.get("descriacao").isEmpty()) {
-            getRequest().setAttribute("descricaoInvalido", "A descriçao é obrigatório!");
+        if(!formData.containsKey("descricao") || formData.get("descricao").isEmpty()) {
+            getRequest().setAttribute("DescricaoInvalido", "A descriçao é obrigatório!");
             isValid = false;
         }
 
